@@ -1,0 +1,86 @@
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* COMMON */
+.am-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* HEADER */
+header {
+    background-color: white;
+    color: #333333;
+    height: 60px;
+    display: flex;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+h1 {
+    display: inline-block;
+    margin-left: 15px;
+}
+img {
+    height: 50px;
+}
+#user-level {
+    width: 150px;
+    height: 20px;
+}
+#play-btn {
+    padding: 0px 10px;
+    height: 20px;
+}
+
+/* MAIN */
+main {
+    padding: 40px 0;
+}
+
+/* Grid */
+#grid{
+	display: flex;
+	flex-wrap:wrap ;
+    margin: 0 auto;
+	width: 600px;
+	height: 600px;
+    align-content: flex-start;
+	background-color: aquamarine;
+}
+.square{
+	border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;	
+}
+.square.easy {
+	width: calc(100% / 10);
+	height: calc(100% / 10);
+}
+.square.hard {
+	width: calc(100% / 9);
+	height: calc(100% / 9);	
+}
+.square.crazy {
+	width: calc(100% / 7);
+	height: calc(100% / 7);	
+}
+.square.blue {
+    background-color: lightskyblue;
+}
+.square.red {
+    background-color: lightcoral;
+}
