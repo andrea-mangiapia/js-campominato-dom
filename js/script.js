@@ -26,6 +26,7 @@ function startGame() {
     // reset delle celle
     mainGrid.innerHTML = '';
     mainGrid.className = '';
+    userMessage.innerHTML = '';
 
     // Creo un reset della griglia all'inizio di ogni nuova partita che svuoterà la griglia precedente:
     mainGrid.innerHTML = '';
@@ -98,7 +99,8 @@ function startGame() {
         // SE la cella cliccata è una bomba allora coloro di rosso la cella e scrivo in pagina che "Hai perso"
         if(bombs.includes(userNumber)){ 
             this.classList.add('red');
-            userMessage.innerHTML = `ops sei ESPLOSO!!, hai utilizzato ${successfulNumbers.length} tentativi.`;  
+            userMessage.innerHTML = `ops sei ESPLOSO!!, hai utilizzato ${successfulNumbers.length} tentativi.`;
+            stopClick();
         } else {
             // SE la cella cliccata non è una bomba allora lo coloro di blu
             if(!successfulNumbers.includes (userNumber)){
@@ -109,10 +111,30 @@ function startGame() {
             if(successfulNumbers.length === numberAttempts){
                 userMessage.innerHTML = `Hai VINTO,non sei ESPLOSO!!, hai utilizzato il massimo dei tentativi: ${rightNumbers.length}`;
             }            
-        }  
-                            
+        }                         
     }
 
+    // DA AGGIUNGERE DOPO IL PUSH
+      
+    // funzione per evitare i click dopo la fine del gioco 
+    function stopClick(){
+        // faccio un ciclo per prendere tutti i quadrati 
+        // seleziono tutte le celle che hanno l'evento del click
+        // rimuovo l'evento del click da tutti 
+        // e a tutte le celle che contengono un numero che si trova dentro l'array delle bombe
+        // aggiungo la classe red in modo tale da scoprire tutte le bombe 
+        let sb = 1;
+        for( let i = 0; i < gameLevelValue; i++ ){
+        let allSquareBomb = document.querySelectorAll('.square');
+        allSquareBomb[i].removeEventListener("click", checkClick);
+            
+        if(bombs.includes(sb)){
+            let allSquareBomb = document.querySelectorAll('.square');
+            allSquareBomb[sb-1].classList.add('red'); 
+        }
+        sb++;
+        }    
+    }
 }
 
 // ------------------------
