@@ -34,13 +34,13 @@ h1 {
     margin-left: 15px;
 }
 img {
-    height: 50px;
+    height: 45px;
 }
 #user-level {
     width: 150px;
     height: 20px;
 }
-#play-btn {
+#play {
     padding: 0px 10px;
     height: 20px;
 }
@@ -51,7 +51,7 @@ main {
 }
 
 /* Grid */
-#grid{
+#main-grid{
 	display: flex;
 	flex-wrap:wrap ;
     margin: 0 auto;
@@ -66,15 +66,15 @@ main {
     align-items: center;
     justify-content: center;	
 }
-.square.easy {
+#main-grid.easy .square {
 	width: calc(100% / 10);
 	height: calc(100% / 10);
 }
-.square.hard {
+#main-grid.hard .square {
 	width: calc(100% / 9);
 	height: calc(100% / 9);	
 }
-.square.crazy {
+#main-grid.crazy .square {
 	width: calc(100% / 7);
 	height: calc(100% / 7);	
 }
@@ -83,4 +83,10 @@ main {
 }
 .square.red {
     background-color: lightcoral;
+}
+#user-message {
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    padding: 25px 0;
 }
